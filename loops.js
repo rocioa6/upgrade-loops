@@ -47,21 +47,48 @@ Usa un bucle forof para recorrer todos los destinos del array. Imprime en un ***
 
 Puedes usar este array: */
 
-const placesToTravel = ['Japon', 'Venecia', 'Murcia', 'Santander', 'Filipinas', 'Madagascar']
+let placesToTravel = [
+  "Japon",
+  "Venecia",
+  "Murcia",
+  "Santander",
+  "Filipinas",
+  "Madagascar",
+];
 for (const places of placesToTravel) {
-    console.log(places); 
+  console.log(places);
 }
 
 /* **Iteración #4: Probando For...in**
 
 Usa un **for...in** para imprimir por consola los datos del alienígena.. Puedes usar este objeto: */
 const alien = {
-    name: 'Wormuck',
-    race: 'Cucusumusu',
-    planet: 'Eden',
-    weight: '259kg'
-}
+  name: "Wormuck",
+  race: "Cucusumusu",
+  planet: "Eden",
+  weight: "259kg",
+};
 
 for (const key in alien) {
-   console.log(key, 'con valor', alien[key]);
+  console.log(key, "con valor", alien[key]);
 }
+
+/* Usa un bucle **for** para recorrer todos los destinos del array y elimina los elementos que tengan el id 11 y 40. Imprime en un ***console log*** el array. Puedes usar este array: */
+placesToTravel = [
+  { id: 5, name: "Japan" },
+  { id: 11, name: "Venecia" },
+  { id: 23, name: "Murcia" },
+  { id: 40, name: "Santander" },
+  { id: 44, name: "Filipinas" },
+  { id: 59, name: "Madagascar" },
+];
+
+for (let index = 0; index < placesToTravel.length; index++) {
+  if (placesToTravel[index].id === 11) {
+    placesToTravel.splice(index, 1);
+  }
+  else if (placesToTravel[index].id === 40) {
+    placesToTravel.splice(index, 1);
+  }
+}
+console.log(placesToTravel);
