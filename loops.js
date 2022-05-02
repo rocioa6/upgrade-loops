@@ -86,9 +86,34 @@ placesToTravel = [
 for (let index = 0; index < placesToTravel.length; index++) {
   if (placesToTravel[index].id === 11) {
     placesToTravel.splice(index, 1);
-  }
-  else if (placesToTravel[index].id === 40) {
+  } else if (placesToTravel[index].id === 40) {
     placesToTravel.splice(index, 1);
   }
 }
 console.log(placesToTravel);
+/* **Iteración #6: Mixed For...of e includes**
+
+Usa un bucle **for...of** para recorrer todos los juguetes y elimina los que incluyan la palabra gato. Recuerda que puedes usar la función ***.includes()*** para comprobarlo.Puedes usar este array: */
+let toys = [
+  { id: 5, name: "Buzz MyYear" },
+  { id: 11, name: "Action Woman" },
+  { id: 23, name: "Barbie Man" },
+  { id: 40, name: "El gato con Guantes" },
+  { id: 40, name: "El gato felix" },
+];
+
+/* for (let [index, value] of toys.entries()) {
+  if (value["name"].includes("gato")) {
+    toys.splice(index, 1);
+    index--;
+  }
+}
+console.log(toys);
+ */
+
+toys.forEach(function (toy, index) {
+  if (toy["name"].includes('gato')) {
+    toys.splice(index, 2);
+  }
+});
+console.log(toys);
